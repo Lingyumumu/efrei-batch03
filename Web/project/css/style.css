@@ -1,0 +1,49 @@
+/*mettre le header fond ecran noir*/
+header{
+    border-bottom: 2px solid white;
+}
+
+header box {
+    background-color: blue;
+}
+footer{
+    border-bottom: 2px solid white;
+}
+
+.wrapper{
+    background-color: #000000;
+    /*couleur des mots*/
+    color: white;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*afficher vers la droite*/
+    margin-left: 50px;
+    margin-bottom: 0px;
+}
+
+.box{
+    margin-top: -10px;
+    margin-bottom: -2px;
+    /*couleur des mots*/
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-top: 50px;
+    border: 2px solid white;
+    font-size: 20px;
+    display: block;
+}
+
+/* faire changer de coleur les mots au survol de la souris*/
+.box:hover{
+    color: black;
+    background-color: white;
+}
+
+body{
+    /*ajouter une photo au fond*/
+    background-image: url("../img/star.jpeg");
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

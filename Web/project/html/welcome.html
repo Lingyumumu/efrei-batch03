@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My First Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/welcome.css">
+    <script src="../js/welcome.js"></script>
+</html>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <ul>
+            <li class><a href="welcome.html">Home</a></li>
+            <li><a href="Project.html">About Me</a></li>
+            <li><a href="hobby.html">Hobby</a></li>
+            <li><a href="contact.html">Contact me</a></li>
+            </ul>
+        </div>
+        <img src="../img/menu-btn.png" alt="logo" class="logo" id="logo" onclick="display()">
+    </nav>
+    <img src="../img/welcome.gif" alt="cat" class="image" >
+    <div id="text_zone">
+    <h1 id="text"></h1>
+    </div>
+
+    
+</body>
+
+</html>
+<script>
+    const prog = 'Hello Welcome to my Website' + '\n' + 'My name is Marc Zhao' + '\n' + 'I am a student of computer science'; 
+    let index = 1;
+    
+    function writeText(){
+        text = document.getElementById('text');
+        text.innerText = prog.slice(0, index) + '|';
+        if(index < prog.length){
+            index++;
+        }
+        
+    }
+
+    function display(){
+        const image = document.querySelector(".image")
+        const text = document.querySelector("#text_zone")
+        var x = window.matchMedia("(max-width: 900px)")
+
+        // if(x.matches){
+        //     image.style.display = "block"
+        //     text.style.display = "block"
+        if(x.matches){
+            if(image.style.display === "none" && text.style.display === "none" && x.matches){
+                image.style.display = "block"
+                text.style.display = "block"
+            }
+            else{
+                image.style.display = "none"
+                text.style.display = "none"
+            }
+        }
+    }
+
+    setInterval(writeText, 200);
+
+        const menuHamburger = document.querySelector(".logo")
+        const navLinks = document.querySelector(".nav-links")
+
+ 
+        menuHamburger.addEventListener('click',()=>{
+        navLinks.classList.toggle('mobile-menu')
+
+        })
+
+
+
+</script>
+

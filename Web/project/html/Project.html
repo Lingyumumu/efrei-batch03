@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta   charset="utf-8" />
+        <title>My First Web Page</title>
+        <link   rel="stylesheet" href="../css/project.css" />
+        <script src="../js/script.js"></script>
+        <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    </head>
+    <header>
+        <div class="wrapper">
+        <a href="home.html"><p class="box">Home</p></a>
+        <a href="Project.html"><p class="box">About Me</p></a>
+        <a href="hobby.html"><p class="box">Hobby</p></a>
+        <a href="contact.html"><p class="box">Contact me</p></a>
+        </div>
+    </header>
+    <body>
+        <!---about---->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="../img/user.png" alt="user" />    
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About me</h1>
+                        <p>//////////////////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////////////////////////
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                            
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI?UX</span><br>Designing Web/App interfaces</li>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>App Development</span><br>Building Android/IOS apps</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2022</span><br>Alterning Maintenance Engineer</li>
+                                <li><span>2021</span><br>Intership Mechanical Design</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2022 - current</span><br>Geneal and Digital Engineer</li>
+                                <li><span>2021 - 2022</span><br>Industrial Engineering Engineer</li>
+                                <li><span>2019 - 2021</span><br>DUT Mechanical and Production Engineering</li>
+                                <li><span>2016 - 2019</span><br>Chaptal high school</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------hobby------------------------------->
+        
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Hobby</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-sharp fa-solid fa-dumbbell"></i>
+                        <h2>Muscle</h2>
+                        <p>///////////////////////////////////////////
+                            //////////////////////////////////////////</p>
+                    </div>
+                    <div>
+                        <i class="fa-sharp fa-solid fa-music"></i>
+                        <h2>Music</h2>
+                        <p>//////////////////////////////////////////
+                            /////////////////////////////////////////</p>
+                    </div> 
+                    <div>
+                        <i class="fa-sharp fa-solid fa-gamepad"></i>
+                        <h2>Game</h2>
+                        <p>//////////////////////////////////////////
+                            /////////////////////////////////////////</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            function opentab(tabname){
+                for(var i = 0; i < tablinks.length; i++){
+                    tablinks[i].className = tablinks[i].className.replace(" active-links", "");
+                }
+                for(var i = 0; i < tabcontents.length; i++){
+                    tabcontents[i].className = tabcontents[i].className.replace(" active-tab", "");
+                }
+                document.getElementById(tabname).className += " active-tab";
+                event.currentTarget.className += " active-links";
+            }
+        </script>
+    </body>
+    <footer>
+        <p>My first web page</p>
+    </footer>
+
+</html>
+    

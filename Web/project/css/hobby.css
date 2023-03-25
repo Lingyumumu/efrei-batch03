@@ -1,0 +1,47 @@
+/*mettre le header fond ecran noir*/
+header{
+    border-bottom: 2px solid black;
+    /*resoudre le probleme d'affichage*/
+    display: flex;
+    /*afficher tout le fond en couleur bleu clair*/
+
+}
+
+header box {
+    background-color: blue;
+}
+footer{
+    border-bottom: 2px solid white;
+}
+
+.wrapper{
+    background-color: white;
+    /*couleur des mots*/
+    color: black;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*afficher vers la droite*/
+    margin-left: 50px;
+    margin-bottom: 0px;
+    margin-top: -10px;
+}
+
+.box{
+    margin-top: -10px;
+    margin-bottom: -2px;
+    /*couleur des mots*/
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-top: 50px;
+    font-size: 20px;
+    display: block;
+}
+
+/*faire changer de couleur en prenant 2 sec*/
+.box:hover{
+    color: white;
+    background-color: black;
+}
+
+

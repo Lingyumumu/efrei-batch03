@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My First Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/welcome.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Hobby</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div id="portfolio"></div>
+            <h1 id="text"></h1>
+        </div>
+    </div>
+    <!---about---->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="../img/user.png" alt="user" />    
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>//////////////////////////////////////////////////////////////////////////////////////
+                    ////////////////////////////////////////////////////////////////////////////////////////
+                    ////////////////////////////////////////////////////////////////////////////////////////
+                    ////////////////////////////////////////////////////////////////////////////////////////
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI?UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/IOS apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022</span><br>Alterning Maintenance Engineer</li>
+                            <li><span>2021</span><br>Intership Mechanical Design</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022 - current</span><br>Geneal and Digital Engineer</li>
+                            <li><span>2021 - 2022</span><br>Industrial Engineering Engineer</li>
+                            <li><span>2019 - 2021</span><br>DUT Mechanical and Production Engineering</li>
+                            <li><span>2016 - 2019</span><br>Chaptal high school</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------hobby------------------------------->
+    
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Hobby</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-sharp fa-solid fa-dumbbell"></i>
+                    <h2>Sport</h2>
+                    <p>///////////////////////////////////////////
+                        //////////////////////////////////////////</p>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-music"></i>
+                    <h2>Music</h2>
+                    <p>//////////////////////////////////////////
+                        /////////////////////////////////////////</p>
+                </div> 
+                <div>
+                    <i class="fa-sharp fa-solid fa-gamepad"></i>
+                    <h2>Game</h2>
+                    <p>//////////////////////////////////////////
+                        /////////////////////////////////////////</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------contact------------------------------->
+    <div id="contact">
+        <div class="container1">
+            <div class="comment-box">
+                <button class="btn-close">close comment</button>
+                <div class="comment-form">
+                    <div class="header1">Message board</div>
+                    <div>
+                        <input type="text" id="name" placeholder="enter your name">
+                    </div>
+                    <div>
+                        <textarea name="" id="comment" cols="30" rows="3" placeholder="enter your message"></textarea>
+                    </div>
+                    <button id="btn-submit">Message</button>
+                </div>
+                <div>
+                    <h4 class="header1">Message list</h4>
+                    <div id="comments">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <footer>
+        <div class="footer">
+        <a href="https://www.linkedin.com/in/marc-zhao-9024521a8/"><img src="../img/linkedin.png" alt="logo" width="100" height="100"></a>
+        <a href="https://github.com/Lingyumumu"><img src="../img/github.png" alt="logo" width="100" height="100"></a>
+        </div>
+    </footer>
+</html>
+
+<script>
+    const prog = 'Hello Welcome to my Website' + '\n' + 'My name is Marc Zhao' + '\n' + 'I am a student of computer science'; 
+    let index = 1;
+    
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(var i = 0; i < tablinks.length; i++){
+            tablinks[i].className = tablinks[i].className.replace(" active-links", "");
+        }
+        for(var i = 0; i < tabcontents.length; i++){
+            tabcontents[i].className = tabcontents[i].className.replace(" active-tab", "");
+        }
+        document.getElementById(tabname).className += " active-tab";
+        event.currentTarget.className += " active-links";
+    }
+
+    function writeText(){
+        text = document.getElementById('text');
+        text.innerText = prog.slice(0, index) + '|';
+        if(index < prog.length){
+            index++;
+        }
+    }
+    setInterval(writeText, 100);
+
+    const comments = [
+    {
+        name: "Danny",
+        comment:
+            "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        time: "Thu Jan 12 2022",
+    },
+    {
+        name: "Jackson",
+        comment: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit",
+        time: "Thu Jan 11 2022",
+    },
+];
+
+const commentsBox = document.querySelector("#comments");
+let nameInput = document.querySelector("#name");
+let commentInput = document.querySelector("#comment");
+const btnSubmit = document.querySelector("#btn-submit");
+const btnClose = document.querySelector(".btn-close");
+
+//si name et comment sont vide, on ne peut pas envoyer le message
+btnSubmit.addEventListener("click", function () {
+    if (nameInput.value === "" || commentInput.value === "") {
+        alert("Please enter your name and comment");
+        event.preventDefault(); // empêche l'envoi du formulaire
+        return;
+        //il y a tourjous un commentaire vide
+    }
+});
+
+
+const rennderComments = function (comments) {
+    commentsBox.innerHTML = ""
+    comments.forEach((item, index) => {
+        commentsBox.insertAdjacentHTML(
+            'beforeend',
+            `<div class="comment">
+                <hr />
+                <h4>
+                    <span>${item.name}</span>
+                    <span class="date">${item.time}</span>
+                </h4>
+                <p><span class="commentaire">${item.comment}</span></p>
+                <button class="delete-btn" data-index="${index}">Delete</button>
+             </div>
+            `
+        );
+    });
+
+    // add event listener for each delete button
+    const deleteBtns = document.querySelectorAll(".delete-btn");
+    deleteBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            const index = parseInt(this.getAttribute("data-index"));
+            comments.splice(index, 1);
+            rennderComments(comments);
+        });
+    });
+}
+
+rennderComments(comments);
+
+btnSubmit.onclick = function () {
+    let nameStr = nameInput.value.replace(/<(\/?\w+)>/g, "&lt;$1&gt;");
+    let commentStr = commentInput.value.replace(/<(\/?\w+)>/g, "&lt;$1&gt;");
+    comments.unshift(
+        {
+        name: nameStr,
+        comment: commentStr,
+        time: new Date(),
+        }
+    );
+    rennderComments(comments);
+    nameInput.value = '';
+    commentInput.value = '';
+}
+
+let isClosed = false;
+btnClose.onclick = function () {
+    if (!isClosed) {
+        btnClose.textContent = "Open Message";
+    } else {
+        btnClose.textContent = "Close Message";
+    }
+    nameInput.disabled = !nameInput.disabled;
+    commentInput.disabled = !commentInput.disabled;
+    btnSubmit.disabled=!btnSubmit.disabled;
+    isClosed = !isClosed;
+}
+
+var sidemenu = document.getElementById("sidemenu");
+function openmenu(){
+    sidemenu.style.right = "0";
+}
+function closemenu(){
+    sidemenu.style.right = "-200px";
+}
+
+
+
+</script>
+   
